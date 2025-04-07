@@ -17,13 +17,13 @@ def main():
     }
 
     print("Select a game:")
-    for key, (name, _, _) in games_list.items():
-        print(f"{key}: {name}")
+    for key, (game_logic, description) in games_list.items():
+        print(f"{key}: {description}")
 
     choice = input("Your choice: ")
 
     if choice in games_list:
-        _, game_logic, description = games_list[choice]
+        game_logic, description = games_list[choice]
         run_game(game_logic, description)
     else:
         print("Invalid choice.")
